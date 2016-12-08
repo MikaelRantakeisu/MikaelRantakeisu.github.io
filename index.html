@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+ 
+    <head>
+
+        <script src="js/moment.js"></script>
+        <script src="js/jquery.js"></script> 
+        <script src="js/combodate.js"></script> 
+    </head>
+<body>
+
+<h1>Set time of threadment</h1>
+<p>Current time</p>
+
+<input type="text" id="datetime24" data-format="DD-MM-YYYY HH:mm" data-template="DD / MM / YYYY     HH : mm" name="datetime" value="21-12-2016 20:30">
+<script type ="text/javascript">
+$('input').combodate({
+    minYear: 1975,
+    maxYear: 2030,
+    minuteStep: 10
+});   
+</script>
+
+<script type ="text/javascript">
+ function WriteToFile(passForm) {
+
+    set fso = CreateObject("Scripting.FileSystemObject");  
+    set s = fso.CreateTextFile("C:\test.txt", True);
+    s.writeline(document.passForm.input1.value);
+    s.writeline(document.passForm.input2.value);
+    s.writeline(document.passForm.input3.value);
+    s.Close();
+ }
+  </script>
+
+</body>
+</html>
