@@ -19,6 +19,23 @@ $('input').combodate({
     maxYear: 2030,
     minuteStep: 10
 });   
+
+localStorage.setItem("email", "Peter");
+var storedValue = localStorage.getItem("email");
+
+//test.value=window.localStorage["name"];
+//test2.value=window.localStorage["name3"];
+console.log(storedValue);
+
+</script>
+
+<button onclick="store()" type="button">StoreEmail</button>
+
+<script  type="text/javascript">
+  function store(){
+     var inputEmail= document.getElementById("email");
+     localStorage.setItem("time", inputEmail.value);
+    }
 </script>
 
 <script type ="text/javascript">
