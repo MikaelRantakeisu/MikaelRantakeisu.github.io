@@ -28,6 +28,19 @@ $('input').combodate({
     minuteStep: 10
 }); 
 
+$("input").change(function () {
+         var inputEmail= document.getElementById("datetime24");
+     localStorage.setItem("time", inputEmail.value);
+
+     alert(inputEmail.value);
+
+     document.cookie = "time="+inputEmail.value;
+
+     //var x = document.cookie;
+
+    //alert(x)
+});
+
 $('input').combodate('setValue', time)
 
 function getCookie(cname) {
@@ -45,9 +58,6 @@ function getCookie(cname) {
     return "";
 }
 
-//var x = document.cookie;
-
-//alert(x)
 
 </script>
 
