@@ -20,6 +20,13 @@ $('input').combodate({
     minuteStep: 10
 });   
 
+$('input').click(function() {
+    var input= document.getElementById("datetime24");
+    localStorage.setItem("time", input.value);
+
+    document.cookie = "time=" + input.value;
+})​
+
 localStorage.setItem("email", "Peter");
 var storedValue = localStorage.getItem("email");
 
@@ -36,6 +43,7 @@ console.log(storedValue);
      var inputEmail= document.getElementById("email");
      localStorage.setItem("time", inputEmail.value);
     }
+
 </script>
 
 <script type ="text/javascript">
@@ -48,7 +56,12 @@ console.log(storedValue);
     s.writeline(document.passForm.input3.value);
     s.Close();
  }
+
   </script>
+
+ <div id="div1" contenteditable="true">
+  This text can be edited by the user.
+</div>
 
 </body>
 </html>
