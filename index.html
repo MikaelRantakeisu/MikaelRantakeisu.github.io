@@ -22,16 +22,6 @@ $('input').combodate({
 }); 
 
 
-
-
-$('input').click(function() {
-    alert("I am an alert box!");
-    var input= document.getElementById("datetime24");
-    localStorage.setItem("time", input.value);
-
-    document.cookie = "time=" + input.value;
-})​
-
 </script>
 
 <button onclick="store()" type="button">StoreEmail</button>
@@ -43,7 +33,7 @@ $('input').click(function() {
     var input= document.getElementById("datetime24");
     localStorage.setItem("time", input.value);
 
-    alert(input.value);
+    alert("I am an alert box!");
 
     document.cookie = "time=" + input.value;
 
