@@ -21,6 +21,7 @@ $('input').combodate({
 });   
 
 $('input').click(function() {
+    alert("I am an alert box!");
     var input= document.getElementById("datetime24");
     localStorage.setItem("time", input.value);
 
