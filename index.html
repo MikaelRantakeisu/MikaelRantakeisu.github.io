@@ -19,7 +19,7 @@ var x = document.cookie;
 
 var time = getCookie("time")
 
-alert(time)
+//alert(time)
 
 $('input').combodate({
     minYear: 1975,
@@ -78,20 +78,8 @@ function getCookie(cname) {
 
     //alert(x)
 }
-</script>
 
-<script type ="text/javascript">
- function WriteToFile(passForm) {
-
-    set fso = CreateObject("Scripting.FileSystemObject");  
-    set s = fso.CreateTextFile("C:\test.txt", True);
-    s.writeline(document.passForm.input1.value);
-    s.writeline(document.passForm.input2.value);
-    s.writeline(document.passForm.input3.value);
-    s.Close();
- }
-
- function saveTextAsFile()
+function saveTextAsFile()
 {
     var textToSave = document.getElementById("inputTextToSave").value;
     var textToSaveAsBlob = new Blob([textToSave], {type:"text/plain"});
@@ -108,6 +96,19 @@ function getCookie(cname) {
  
     downloadLink.click();
 }
+</script>
+
+<script type ="text/javascript">
+ function WriteToFile(passForm) {
+
+    set fso = CreateObject("Scripting.FileSystemObject");  
+    set s = fso.CreateTextFile("C:\test.txt", True);
+    s.writeline(document.passForm.input1.value);
+    s.writeline(document.passForm.input2.value);
+    s.writeline(document.passForm.input3.value);
+    s.Close();
+ }
+
 
 </script>
 
