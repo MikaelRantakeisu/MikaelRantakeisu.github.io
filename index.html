@@ -22,7 +22,6 @@ var time = getCookie("time")
 alert(time)
 
 $('input').combodate({
-    value: time,
     minYear: 1975,
     maxYear: 2030,
     minuteStep: 10
@@ -32,7 +31,7 @@ $("input").change(function () {
          var inputEmail= document.getElementById("datetime24");
      localStorage.setItem("time", inputEmail.value);
 
-     alert(inputEmail.value);
+     //alert(inputEmail.value);
 
      document.cookie = "time="+inputEmail.value;
 
