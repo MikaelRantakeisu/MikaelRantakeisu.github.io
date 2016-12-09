@@ -14,11 +14,39 @@
 
 <input type="text" id="datetime24" data-format="DD-MM-YYYY HH:mm" data-template="DD / MM / YYYY     HH : mm" name="datetime" value="21-12-2016 20:30">
 <script type ="text/javascript">
+
+var x = document.cookie;
+
+var time = getCookie("time")
+
+alert(time)
+
 $('input').combodate({
+    value: time,
     minYear: 1975,
     maxYear: 2030,
     minuteStep: 10
 }); 
+
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i = 0; i <ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length,c.length);
+        }
+    }
+    return "";
+}
+
+//var x = document.cookie;
+
+//alert(x)
 
 </script>
 
@@ -26,10 +54,17 @@ $('input').combodate({
 
 <script  type="text/javascript">
   function store(){
-      alert("I am an alert box!");
 
      var inputEmail= document.getElementById("datetime24");
      localStorage.setItem("time", inputEmail.value);
+
+     //alert(inputEmail.value);
+
+     document.cookie = "time="+inputEmail.value;
+
+     //var x = document.cookie;
+
+    //alert(x)
 }
 </script>
 
@@ -45,10 +80,6 @@ $('input').combodate({
  }
 
   </script>
-
- <div id="div1" contenteditable="true">
-  This text can be edited by the user.
-</div>
 
 </body>
 </html>
